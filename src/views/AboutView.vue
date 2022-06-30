@@ -4,7 +4,6 @@
       <template #maincontent>
         <!-- i added youtube iframe here -->
         <iframe width="727" height="409" :src="movie.embed" :title="movie.title" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
         <template v-if="movieDetailsLoading">
           <div class="min-h-screen flex justify-center items-center bg-inherit">
             <div class="loader bg-white p-5 rounded-full flex space-x-3">
@@ -95,8 +94,9 @@ onMounted(() => {
   movieView.getMovieViews(route.params.id);
   movieTrailer.getMovieTrailers(props);
 });
+
 // create moview computed props
-const movie = computed(() => {
+let movie = computed(() => {
   return movieTrailer.movieTrailers;
 })
 
