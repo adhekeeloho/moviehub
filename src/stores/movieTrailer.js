@@ -5,7 +5,10 @@ export const useMovieTrailer = defineStore("movieTrailer", {
   state: () => {
     return {
       // all these properties will have their type inferred automatically
-      movieTrailers: null,
+      movieTrailers: {
+        embed: null,
+        title: null,
+      },
       movieTrailersLoading: false,
       movieTrailersError: null,
     };
