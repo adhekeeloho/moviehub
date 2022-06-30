@@ -2,44 +2,9 @@
   <div class="about">
     <Header>
       <template #maincontent>
-        <template v-for="result in movieTrailer.movieTrailers" :key="result._id">
-          
-          <!-- <div class="pb-10">
-            <video
-              id="my-video"
-              class="video-js vjs-theme-fantasy"
-              controls
-              preload="auto"
-              width="1000"
-              height="464"
-              
-              data-setup="{}"
-            >
-              <source :src="result.url"  type="video/mp4" />
-              
-            </video>
-            </div> -->
+        <!-- i added youtube iframe here -->
+        <iframe width="727" height="409" :src="movie.embed" :title="movie.title" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-            <!-- <div class="flex flex-col items-center w-1/3 mx-auto"> -->
-              
-	<!-- <div 
-    	class="relative h-0 overflow-hidden max-w-full w-full" 
-		style="padding-bottom: 56.25%"
- 	>
-		<iframe
-       		:src="result.url" 
-            frameborder="0"
-            allowfullscreen
-            class="absolute top-0 left-0 w-full h-full"
-        ></iframe>
-	</div>
-</div> -->
-          
-          
-          <!-- <div class="pt-10">{{result.description}}</div> -->
-        </template>
-
-        <!-- <h1>This is an about page</h1> -->
         <template v-if="movieDetailsLoading">
           <div class="min-h-screen flex justify-center items-center bg-inherit">
             <div class="loader bg-white p-5 rounded-full flex space-x-3">
@@ -104,7 +69,14 @@
 </template>
 
 <script setup>
-import { onMounted } from "vue";
+
+/*
+* Try to refactor the entire code and write lesser lines by following DRY 
+* (Do not Repeat Yourself) coding standard. Your naming convention is
+* also very weird and i think you should really improve on that.
+*/
+
+import { onMounted, computed } from "vue";
 import Header from "../components/Header.vue";
 import { useMovieView } from "../stores/movieView";
 import { useMovieTrailer } from "../stores/movieTrailer";
@@ -118,17 +90,18 @@ const { movieDetails, movieDetailsLoading, movieDetailsError } = storeToRefs(
   useMovieView()
 );
 const movieTrailer = useMovieTrailer();
-// const { movieTrailers, movieTrailersLoading, movieTrailersError } = storeToRefs(
-//   useMovieTrailer()
-// );
 
 onMounted(() => {
   movieView.getMovieViews(route.params.id);
   movieTrailer.getMovieTrailers(props);
 });
+// create moview computed props
+const movie = computed(() => {
+  return movieTrailer.movieTrailers;
+})
 
 const props = route.params.id;
-console.log(props);
+
 </script>
 
 <style scoped>
