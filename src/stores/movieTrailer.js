@@ -13,7 +13,6 @@ export const useMovieTrailer = defineStore("movieTrailer", {
   actions: {
     async getMovieTrailers(id) {
       const movies = await movieServices.getMovieTrail(id)
-      console.log(movies.data.result[0]);
         this.movieTrailers = movies.data.result[0];
       
     },
