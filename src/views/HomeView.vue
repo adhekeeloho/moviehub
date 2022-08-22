@@ -45,7 +45,7 @@ onMounted(() => {
                 <div
                   data-aos="fade-up"
                   data-aos-duration="3000"
-                  class="max-w-sm h-full newsCard news-Slide-up bg-white rounded-lg overflow-hidden shadow-lg mt-10"
+                  class="max-w-sm h-full newsCard news-Slide-up bg-inherit rounded-lg overflow-hidden shadow-lg mt-10"
                 >
                   <img
                     class="w-full h-full"
