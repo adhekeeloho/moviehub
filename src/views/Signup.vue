@@ -20,7 +20,7 @@ const register = () => {
       console.log("successfully registered");
       console.log(auth.currentUser);
 
-      router.push("/landingpage");
+      router.push("/home");
     })
     .catch((error) => {
       console.log(error.code);
