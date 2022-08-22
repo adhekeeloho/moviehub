@@ -51,11 +51,7 @@
       </section>
     </div>
 
-    <div
-      data-aos="fade-up"
-      data-aos-duration="3000"
-      class="bg-gradient-to-l from-sky-900 to-slate-900"
-    >
+    <div>
       <img
         class="h-[400px] w-full"
         src="../assets/fantasy-4126847_1920.jpg"
@@ -64,12 +60,12 @@
     </div>
 
     <!--Call to Action-->
-    <section
-      data-aos="fade-up"
-      data-aos-duration="3000"
-      class="bg-gradient-to-l from-sky-900 to-slate-900"
-    >
-      <div class="container mx-auto px-6 text-center py-10">
+    <section class="bg-gradient-to-l from-sky-900 to-slate-900">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="3000"
+        class="container mx-auto px-6 text-center py-10"
+      >
         <h2 class="mb-6 text-4xl font-bold text-center text-white">
           Movie Hub
         </h2>
@@ -77,15 +73,16 @@
           Want to see amazing movie collections then register or login below.
         </h3>
         <div
-          style="cursor: pointer"
+         
+          class="flex justify-center"
+        >
+          <button
+           style="cursor: pointer"
           @click="
             $router.push({
               name: 'signup',
             })
           "
-          class="flex justify-center"
-        >
-          <button
             class="bg-sky-100 font-bold rounded-full mt-6 py-4 px-8 shadow-lg uppercase tracking-wider hover:border-sky-900 hover:text-white hover:bg-sky-900"
           >
             SignUp
