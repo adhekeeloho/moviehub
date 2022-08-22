@@ -1,29 +1,4 @@
-<script setup>
-import { ref, onMounted } from "vue";
-import { getAuth, onAuthStateChanged, signOut } from "@firebase/auth";
-import { useRouter } from "vue-router";
-
-const router = useRouter();
-const isLoggedIn = ref(false);
-
-let auth;
-onMounted(() => {
-  auth = getAuth();
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      isLoggedIn.value = true;
-    } else {
-      isLoggedIn.value = false;
-    }
-  });
-});
-
-const handleSignOut = () => {
-  signOut(auth).then(() => {
-    router.push("/");
-  });
-};
-</script>
+<script setup></script>
 
 <template>
   <nav
@@ -303,42 +278,44 @@ const handleSignOut = () => {
     <ul
       class="menu border-b md:border-none flex justify-end list-reset m-0 w-full md:w-auto"
     >
-      <!-- <li class="border-t md:border-none">
+
+    <li class="border-t md:border-none">
         <a style="cursor: pointer"
                       @click="
                         $router.push({
                           name: 'landingpage',
                         })
                       "
-          class="block md:inline-block px-4 py-3 no-underline cursor-pointer text-white hover:text-sky-200 font-bold" >Home</a>
-      </li> -->
-
-      <li class="border-t md:border-none">
+          class="block md:inline-block mt-3 px-4 py-3 no-underline cursor-pointer text-white hover:text-sky-200 font-bold" >Home</a>
+      </li>
+      
+      <li class="">
         <a
           style="cursor: pointer"
           @click="
             $router.push({
-              name: 'home',
+              name: 'signup',
             })
           "
-          class="block md:inline-block  px-4 py-3 no-underline cursor-pointer text-white hover:text-sky-200 font-bold"
-          >Movies</a
+          class="block md:inline-block w-[100px] mt-3 text-center rounded-full mr-3 px-4 py-3 border border-sky-100 no-underline cursor-pointer bg-sky-100 text-sky-900 hover:text-slate-900 font-bold"  
+          >SignUp</a
         >
       </li>
 
-      <li class="border-t md:border-none">
+      <li class="">
         <a
-          v-if="isLoggedIn"
-          @click="handleSignOut"
-         class="block md:inline-block w-[100px] text-center rounded-full px-4 py-3 border border-sky-100 no-underline cursor-pointer bg-sky-100 text-sky-900 hover:text-slate-900 font-bold"
-          >Logout</a
+          style="cursor: pointer"
+          @click="
+            $router.push({
+              name: 'login',
+            })
+          "
+          class="block md:inline-block w-[100px] mt-3 rounded-full px-4 py-3 border border-sky-100 no-underline text-center cursor-pointer bg-sky-100 text-sky-900 hover:text-slate-900 font-bold"
+          >Login</a
         >
       </li>
     </ul>
   </nav>
-  <div class="bg-gradient-to-l from-sky-900 to-slate-900">
-    <slot name="maincontent"> </slot>
-  </div>
 </template>
 
 <style scoped>
@@ -365,6 +342,7 @@ const handleSignOut = () => {
     width: 1.125em;
     height: 0.125em;
   }
+
 
   .navicon::before,
   .navicon::after {

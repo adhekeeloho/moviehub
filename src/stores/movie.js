@@ -5,7 +5,8 @@ export const useMovie = defineStore({
   state: () => {
     return {
       // all these properties will have their type inferred automatically
-      
+      movieLoading: false,
+      movieErrors: null,
       movies: [],
     };
   },
@@ -21,6 +22,7 @@ export const useMovie = defineStore({
         },
       };
       try {
+        this.movieLoading = true;
         const call = await fetch(
           "https://movies-app1.p.rapidapi.com/api/movies?page=3",
           requestOptions
@@ -31,9 +33,10 @@ export const useMovie = defineStore({
         console.log(res.results);
         
       } catch (error) {
-        this.error = error;
-        console.log(error);
-      } 
+        this.movieError = error;
+      } finally {
+        this.movieLoading = false;
+      }
     },
   },
   getters: {},

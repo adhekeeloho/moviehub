@@ -4,7 +4,7 @@ import movieServices from "../services/movieServices.Js";
 export const useMovieTrailer = defineStore("movieTrailer", {
   state: () => {
     return {
-      // all these properties will have their type inferred automatically
+      
       movieTrailers: null,
       movieTrailersLoading: false,
       movieTrailersError: null,
@@ -12,9 +12,16 @@ export const useMovieTrailer = defineStore("movieTrailer", {
   },
   actions: {
     async getMovieTrailers(id) {
-      const movies = await movieServices.getMovieTrail(id)
+      try {
+        this.movieTrailersLoading = true;
+        const movies = await movieServices.getMovieTrail(id)
         this.movieTrailers = movies.data.result[0];
-      
+          console.log(movies.data.result[0]);
+      }  catch (error) {
+        this.movieTrailersError = error;
+      } finally {
+        this.movieTrailersLoading = false;
+      }
     },
   },
   getters: {},
