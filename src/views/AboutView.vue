@@ -49,7 +49,7 @@
                       }}</span>
                     </h1>
                     <p
-                      class="mx-auto text-base text-gray-500 sm:max-w-md lg:text-xl md:max-w-3xl"
+                      class="mx-auto text-base text-gray-300 sm:max-w-md lg:text-xl md:max-w-3xl"
                     >
                       {{ movieDetails.description }}
                     </p>

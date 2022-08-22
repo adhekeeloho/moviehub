@@ -276,7 +276,7 @@
     </label>
 
     <ul
-      class="menu border-b md:border-none flex justify-end list-reset m-0 w-full md:w-auto"
+      class="menu  md:border-none flex justify-end list-reset m-0 w-full md:w-auto"
     >
 
     <li class="border-t md:border-none">
@@ -330,7 +330,7 @@
 
 .to {
   display: flex;
-  justify-content: center;
+   justify-content: center;
 }
 .let {
   padding: 0 2px;

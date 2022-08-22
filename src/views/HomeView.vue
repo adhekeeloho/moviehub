@@ -48,7 +48,7 @@ onMounted(() => {
                   class="max-w-sm h-full newsCard news-Slide-up bg-inherit rounded-lg overflow-hidden shadow-lg mt-10"
                 >
                   <img
-                    class="w-full h-full"
+                    class="w-96 h-full"
                     :src="result.image"
                     alt="Sunset in the mountains"
                   />
@@ -118,7 +118,7 @@ onMounted(() => {
 }
 .newsCard {
   position: relative;
-  background-color: #fff;
+  background-color: inherit;
   color: #fff;
   width: 100%;
   overflow: hidden;

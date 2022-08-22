@@ -301,7 +301,7 @@ const handleSignOut = () => {
     </label>
 
     <ul
-      class="menu border-b md:border-none flex justify-end list-reset m-0 w-full md:w-auto"
+      class="menu md:border-none flex justify-end list-reset m-0 w-full md:w-auto"
     >
       <!-- <li class="border-t md:border-none">
         <a style="cursor: pointer"
@@ -321,16 +321,16 @@ const handleSignOut = () => {
               name: 'home',
             })
           "
-          class="block md:inline-block  px-4 py-3 no-underline cursor-pointer text-white hover:text-sky-200 font-bold"
+          class="block md:inline-block mt-3 px-4 py-3 no-underline cursor-pointer text-white hover:text-sky-200 font-bold"
           >Movies</a
         >
       </li>
 
-      <li class="border-t md:border-none">
+      <li class="">
         <a
           v-if="isLoggedIn"
           @click="handleSignOut"
-         class="block md:inline-block w-[100px] text-center rounded-full px-4 py-3 border border-sky-100 no-underline cursor-pointer bg-sky-100 text-sky-900 hover:text-slate-900 font-bold"
+          class="block md:inline-block w-[100px] mt-3 text-center rounded-full px-4 py-3 border border-sky-100 no-underline cursor-pointer bg-sky-100 text-sky-900 hover:text-slate-900 font-bold"
           >Logout</a
         >
       </li>
