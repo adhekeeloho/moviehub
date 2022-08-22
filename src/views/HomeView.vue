@@ -18,7 +18,11 @@ onMounted(() => {
     <Header>
       <template #maincontent>
         <template v-if="movieLoading">
-          <div  data-aos="fade-up" data-aos-duration="3000" class="min-h-screen flex justify-center items-center bg-inherit">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="3000"
+            class="min-h-screen flex justify-center items-center bg-inherit"
+          >
             <div class="loader bg-white p-5 rounded-full flex space-x-3">
               <div
                 class="w-5 h-5 bg-[#1A2A58] rounded-full animate-bounce"
@@ -39,7 +43,8 @@ onMounted(() => {
             >
               <div class="" v-for="result in movie.movies" :key="result._id">
                 <div
-                data-aos="fade-up" data-aos-duration="3000"
+                  data-aos="fade-up"
+                  data-aos-duration="3000"
                   class="max-w-sm h-full newsCard news-Slide-up bg-white rounded-lg overflow-hidden shadow-lg mt-10"
                 >
                   <img
@@ -115,6 +120,7 @@ onMounted(() => {
   position: relative;
   background-color: #fff;
   color: #fff;
+  width: 100%;
   overflow: hidden;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
