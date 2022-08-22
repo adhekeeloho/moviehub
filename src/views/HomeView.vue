@@ -152,21 +152,6 @@ onMounted(() => {
   margin: 0;
 }
 
-.newsCaption-link {
-  color: #fff;
-  text-decoration: underline;
-  opacity: 0.8;
-  -webkit-transition-property: opacity;
-  transition-property: opacity;
-  -webkit-transition-duration: 0.15s;
-  transition-duration: 0.15s;
-  -webkit-transition-timing-function: cubic-bezier(0.39, 0.58, 0.57, 1);
-  transition-timing-function: cubic-bezier(0.39, 0.58, 0.57, 1);
-}
-.newsCaption-link:hover {
-  opacity: 0.65;
-}
-
 .news-Slide-up:hover .newsCaption {
   opacity: 6;
   -webkit-transform: translateY(0px);
